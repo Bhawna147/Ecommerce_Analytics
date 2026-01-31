@@ -1,0 +1,45 @@
+{
+  "inventory": {
+    "Wallet": 50,
+    "Watch": 50,
+    "Belt": 50,
+    "Sunglasses": 50,
+    "Pen": 50,
+    "Necklace": 50,
+    "Earrings": 50,
+    "Bracelet": 50,
+    "Ring": 50,
+    "Card": 50,
+    "Bow": 50
+  },
+  "recipes": {
+    "Val_m_01": {
+      "Wallet": 1,
+      "Watch": 1,
+      "Belt": 1,
+      "Sunglasses": 1,
+      "Pen": 1
+    },
+    "Val_g_watch_04": {
+      "Watch": 1,
+      "Necklace": 1,
+      "Earrings": 1,
+      "Bracelet": 1,
+      "Ring": 1,
+      "Card": 1
+    },
+    "Val_11": {
+      "Earrings": 5,
+      "Bracelet": 2,
+      "Necklace": 2,
+      "Bow": 1
+    },
+    "Val_06": {
+      "Earrings": 1
+    },
+    "Val_gwatch_02": {
+      "Watch": 1,
+      "Bracelet": 1
+    }
+  }
+}

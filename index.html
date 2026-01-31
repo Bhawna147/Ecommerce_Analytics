@@ -14,6 +14,11 @@
 
 <body>
   <div class="container">
+    <nav class="top-nav">
+      <button id="tab-dashboard" class="nav-btn active">Dashboard</button>
+      <button id="tab-inventory" class="nav-btn">Inventory</button>
+    </nav>
+
     <header>
       <div class="header-content">
         <h1>Meesho <span class="gradient-text">Analytics</span></h1>
@@ -25,8 +30,8 @@
       </div>
     </header>
 
-    <main>
-      <section class="chart-section">
+    <main id="dashboard-view">
+      <section class="chart-section" style="display: none;">
         <div class="card">
           <h2>Daily Trends</h2>
           <div class="chart-container">
@@ -55,6 +60,67 @@
         </div>
       </section>
     </main>
+
+    <div id="inventory-view" style="display: none;">
+      <section class="inventory-section">
+        <div class="card">
+          <div class="card-header-row">
+            <h2>Inventory Management</h2>
+            <button id="btn-export-inventory" class="action-btn">Deduct & Export JSON</button>
+          </div>
+
+          <!-- Quick Add by SKU -->
+          <div class="quick-add-section"
+            style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
+            <h3>Add Stock by SKU (Pre-packs)</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+              Adding quantity here increases the stock of all associated raw materials.
+            </p>
+            <div class="quick-add-controls" style="display: flex; gap: 1rem; align-items: end; flex-wrap: wrap;">
+              <div class="input-group">
+                <label
+                  style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.3rem;">Select
+                  SKU</label>
+                <select id="sku-select"
+                  style="padding: 0.5rem; border-radius: 0.4rem; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-primary); min-width: 200px;">
+                  <!-- Populated by JS -->
+                </select>
+              </div>
+              <div class="input-group">
+                <label
+                  style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.3rem;">Quantity
+                  to Add</label>
+                <input type="number" id="sku-add-qty" value="1" min="1"
+                  style="padding: 0.5rem; border-radius: 0.4rem; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-primary); width: 80px;">
+              </div>
+              <button id="btn-add-sku-stock" class="action-btn" style="background: var(--primary-color);">+ Add to
+                Stock</button>
+            </div>
+            <div id="quick-add-preview" style="margin-top: 1rem; font-size: 0.9rem; color: #4ade80;"></div>
+          </div>
+
+          <div class="card-header-row">
+            <h3>Raw Material Inventory</h3>
+          </div>
+          <div class="inventory-table-wrapper">
+            <table class="inventory-table">
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>In Stock</th>
+                  <th>Required</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody id="inventory-body">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
   </div>
   <script src="dashboard.js?v=2"></script>
 </body>
