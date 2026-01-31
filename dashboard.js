@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const response = await fetch('qty.json');
+    const response = await fetch('https://gist.githubusercontent.com/Bhawna147/8c34c3e12da58f192589c4dbb86eb7ef/raw');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
